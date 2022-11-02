@@ -10,12 +10,17 @@ catch (PDOException $e)
     throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
 
-$user = mysql_fix_string($pdo, $_POST['user']);
-$pass = mysql_fix_string($pdo, $_POST['pass']);
+$user = mysql_entities_fix_string($pdo, $_POST['user']);
+$pass = mysql_entities_fix_string($pdo, $_POST['pass']);
 $query = 'SELECT * FROM users WHERE user=$user AND pass=$pass';
 
 function mysql_fix_string($pdo, $string)
 {
     if (get_magic_quotes_gpc()) $string = stripslashes($string);
     return $pdo->quote($string);
+}
+
+function mysql_entities_fix_string($pdo, $string)
+{
+    return htmlentities(mysql_fix_string($pdo, $string));
 }
