@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        function User(forename, username, password)
+        {
+            this.forename = forename
+            this.username = username
+            this.password = password
+
+            User.prototype.showUser = function()
+            {
+                document.write("Forename: " + this.forename + "<br>")
+                document.write("Username: " + this.username + "<br>")
+                document.write("Password: " + this.password + "<br>")
+            }
+        }
+
+        String.prototype.nbsp = function()
+        {
+            return this.replace(/ /g, '&nbsp;')
+        }
+
+        document.write("The quick brown fox".nbsp())
+        
+        document.write("<br>")
+        
+        String.prototype.trim = function ()
+        {
+            return this.replace(/^\s+|\s+$/g, '')
+        }
+
+        document.write("  Please trim me    ".trim())
+    </script>
+</body>
+</html>

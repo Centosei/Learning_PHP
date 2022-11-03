@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+        function User(forename, username, password)
+        {
+            this.forename = forename
+            this.username = username
+            this.password = password
+            
+            this.showUser = function ()
+            {
+                document.write("Forename: " + this.forename + "<br>")
+                document.write("Username: " + this.username + "<br>")
+                document.write("Password: " + this.password + "<br>")
+            }
+        }
+
+        details1 = new User("Wolfgang", "w.a.mozart", "composer")
+
+        details2 = new User()
+        details2.forename = "Johannes"
+        details2.username = "j.brahms"
+        details2.password = "composer"
+        
+        details1.showUser()
+        document.write("<br>")
+        details2.showUser()
+        
+        function Admin(forename, username, password)
+        {
+            this.forename = forename
+            this.username = username
+            this.password = password
+            this.showAdmin = showAdmin
+        }
+
+        function showAdmin()
+        {
+            document.write("Forename: " + this.forename + "<br>")
+            document.write("Username: " + this.username + "<br>")
+            document.write("Password: " + this.password + "<br>")
+        }
+    </script>
+</body>
+</html>
