@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello world</title>
+</head>
+<body>
+    <a id='mylink' href="http://mysite.com">Click me</a><br>
+   <script type="text/javascript"><!--
+       url = document.links.mylink.href;
+       document.write('The URL is ' + url);
+       document.write('<p>Hello World</p>');
+       function product(a, b)
+       {
+           return a*b;
+       }
+
+       test();
+
+       if (typeof a != 'undefined') document.write('<p>a = "' + a + '"</p><br>')
+       if (typeof b != 'undefined') document.write('<p>b = "' + b + '"</p><br>')
+       if (typeof c != 'undefined') document.write('<p>c = "' + c + '"</p><br>')
+
+       function test()
+       {
+           a = 123;
+           var b = 456;
+           if (a == 123) var c = 789;
+       }
+       // -->
+   </script>
+</body>
+</html>

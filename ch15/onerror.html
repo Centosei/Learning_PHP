@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    <script>
+       onerror = errorHandler;
+       document.writ("Welcome to this website");
+
+       function errorHandler(message, url, line)
+       {
+           out  = "Sorry, an error was encountered. \n\n";
+           out += "Error: " + message + "\n";
+           out += "URL: "   + url     + "\n";
+           out += "Line: "  + line    + "\n";
+           out += "Click OK to continue. \n\n";
+           alert(out);
+           return true;
+       }
+    </script>
+</body>
+</html>
