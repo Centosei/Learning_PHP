@@ -1,35 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>Asynchronous Communication Example</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Loading a XML data into a div</h1>
     <div id='info'>This sentense will be replaced</div>
     <script>
-        let out     = ''
-        let nocache = '&nocache=' + Math.random() * 1000000
-        let url     = "rss.news.yahoo.com/rss/topstories"
-        let XHR     = new XMLHttpRequest()
+      let out     = ''
+      let nocache = '&nocache=' + Math.random() * 1000000
+      let url     = "rss.news.yahoo.com/rss/topstories"
+      let XHR     = new XMLHttpRequest()
 
-        XHR.open("GET", "http://localhost:8080/xmlget.php?url=" + url + nocache, true)
-        XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-        XHR.send()
+      XHR.open("GET", "http://localhost:8080/xmlget.php?url=" + url + nocache, true)
+      XHR.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+      XHR.send()
 
-        XHR.onreadystatechange = function()
+      XHR.onreadystatechange = function()
+      {
+        if (this.readyState == 4 && this.status == 200)
         {
-            if (this.readyState == 4 && this.status == 200)
-            {
-                let titles = this.responseXML.getElementsByTagName('title')
+          let titles = this.responseXML.getElementsByTagName('title')
 
-                for (let j = 0; j < titles.length ; ++j)
-                {
-                    out += titles[j].childNodes[0].nodeValue + '<br>'
-                }
-                document.getElementById('info').innerHTML = out
-            }
+          for (let j = 0; j < titles.length ; ++j)
+          {
+            out += titles[j].childNodes[0].nodeValue + '<br>'
+          }
+          document.getElementById('info').innerHTML = out
         }
+      }
     </script>
-</body>
+  </body>
 </html>

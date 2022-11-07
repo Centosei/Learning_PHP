@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Using setInterval</title>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    The time is: <span id='time'>00:00:00</span><br>
+
+    <script>
+      handle = setInterval("showtime(O('time'))", 1000)
+      setTimeout("clearInterval(handle)", 10000)
+      function showtime(object)
+      {
+        var date = new Date()
+        object.innerHTML = date.toTimeString().substr(0,8)
+      }
+    </script>
+  </body>
+</html>
