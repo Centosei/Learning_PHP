@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Using is</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <div><button>button in a div</button></div>
+    <div><button>button in a div</button></div>
+    <span><button>button in a div</button></span>
+    <div><button>button in a div</button></div>
+    <span><button>button in a div</button></span>
+    <div><button>button in a div</button></div>
+    <p id="info"></p>
+    <script>
+      $('button').click(function()
+        {
+          var elem = ''
+          
+          if ($(this).parent().is('div')) elem = 'div'
+          else                            elem = 'span'
+
+          $('#info').html('You clicked a ' + elem)
+        })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Events: Mouse Handling</title>
+    <style>
+      #pad {
+        background:#def;
+        border:1px solid #aaa;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+            crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <canvas id='pad' width='480' height='320'></canvas>
+    <script>
+      canvas  = $('#pad')[0]
+      context = canvas.getContext('2d')
+      pendown = false
+
+      $('#pad').mousemove(function(evt)
+        {
+          var xpos = evt.pageX - canvas.offsetLeft
+          var ypos = evt.pageY - canvas.offsetTop
+
+          if (pendown) context.lineTo(xpos, ypos)
+          else         context.moveTo(xpos, ypos)
+
+          context.stroke()
+        })
+
+      $('#pad').mousedown(function() { pendown = true  })
+      $('#pad')  .mouseup(function() { pendown = false })
+    </script>
+  </body>
+</html>

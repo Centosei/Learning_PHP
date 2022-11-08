@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Events: submit</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" 
+            integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+            crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <form id="form" action="">
+      First name: <input id="fname" type="text" name="fname"><br>
+      Last name:  <input id="lname" type="text" name="lname"><br>
+      <input type="submit">
+    </form>
+    <script>
+      $('#form').submit(function()
+        {
+          if ($('#fname').val() == '' ||
+              $('#lname').val() == '')
+          {
+            alert('Please enter both names')
+            return false
+          }
+        })
+    </script>
+  </body>
+</html>

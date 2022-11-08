@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Modifying The DOM</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <h2>Example Document</h2>
+    <a href="http://google.com" title="Google">Visit Google</a>
+    <code>
+      This is a code section
+    </code>
+    <p>
+    <button id="a">Remove the image</button>
+    <button id="b">Empty the quote</button>
+    </p>
+    <blockquote id="quote" style="border:1px dotted #444; height:20px;">
+      test
+    </blockquote>
+    <script>
+      $('a').prepend('Link: ')
+      $('code').before('<hr>').after('<hr>')
+      $('#b').click(function() {$('#quote').empty() })
+    </script>
+  </body>
+</html>

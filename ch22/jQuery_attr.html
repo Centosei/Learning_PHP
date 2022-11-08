@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>The DOM: attr</title>
+    <script
+        src="https://code.jquery.com/jquery-3.6.1.min.js" 
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" 
+        crossorigin="anonymous">
+    </script>
+  </head>
+  <body>
+    <h2>Example Document</h2>
+    <p><a id="link" href="http://google.com" title="Google">Visit Google</a></p>
+    <script>
+      $('#link').text('Visit Yahoo!')
+      $('#link').attr( {href :'http://yahoo.com', title:'Yahoo!' })
+      alert('The new HTML is:\n' + $('p').html())
+    </script>
+  </body>
+</html>
