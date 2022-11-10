@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>First React Project</title>
+
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+
+    <script type="text/babel">
+      function Two()
+      {
+        return <p>And this, by Jove!</p>
+      }
+      ReactDOM.render(<Two />, document.getElementById('div2'))
+    </script>
+  </head>
+  <body>
+    <div id="div2" style="font-family:monospace"></div>
+  </body>
+</html>

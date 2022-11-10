@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>First React Project</title>
+
+    <script src="react.development.js"></script>
+    <script src="react-dom.development.js"></script>
+    <script src="babel.min.js"></script>
+
+    <script type="text/babel">
+      class Clock extends React.Component
+      {
+        constructor(props)
+        {
+          super(props)
+          this.state = {date: new Date()}
+        }
+
+        render()
+        {
+          return <span> {this.state.date.toLocaleTimeString()} </span>
+        }
+
+        componentDidMount()
+        {
+          this.timerID = setInterval(() => this.tick(), 1000)
+        }
+
+        componentWillUnmount()
+        {
+          clearIntval(this.timerID)
+        }
+
+        tick()
+        {
+          this.setState({date: new Date()})
+        }
+      }
+
+      doRender(<Clock />, 'the_time')
+
+      function doRender(elem, dest)
+      {
+        ReactDOM.render(elem, document.getElementById(dest))
+      }
+    </script>
+  </head>
+  <body>
+    <p style="font-family:monospace">The time is: <span id="the_time"></span></p>
+  </body>
+</html>
