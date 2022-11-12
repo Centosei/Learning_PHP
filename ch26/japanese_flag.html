@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src='OSC.js'></script>
+  </head>
+  <body>
+    <canvas id='mycanvas' width='320' height='240'>
+      This is a canvas element given the ID <i>mycanvas</i>
+    </canvas>
+
+    <img id='myimage'>
+
+    <script>
+      canvas            = O('mycanvas')
+      context           = canvas.getContext('2d')
+      S(canvas).border  = '1px solid black'
+
+      context.beginPath()
+      context.fillStyle = 'white'
+      context.fillRect(0, 0, 320, 240)
+      context.moveTo(160, 120)
+      context.fillStyle = 'red'
+      context.arc(160, 120, 70, 0, Math.PI * 2, false)
+      context.closePath()
+      context.fill()
+      context.clearRect(40, 40, 60, 160)
+      context.strokeStyle = 'green'
+      context.strokeRect(50, 40, 100, 170)
+
+      S('myimage').border = '1px solid black'
+      O('myimage').src    = canvas.toDataURL('image/jpeg', 1)
+    </script>
+  </body>
+</html>

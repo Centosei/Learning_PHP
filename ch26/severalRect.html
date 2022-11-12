@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Drawing Rectangles</title>
+    <script src="OSC.js"></script>
+  </head>
+  <body>
+    <canvas id="mycanvas" width='640' height='240'></canvas>
+
+    <script>
+      canvas                = O('mycanvas')
+      context               = canvas.getContext('2d')
+      S(canvas).background = 'lightblue'
+      context.fillStyle     = 'blue'
+      context.strokeStyle   = 'green'
+
+      context.fillRect(  20, 20, 600, 200)
+      context.clearRect( 40, 40, 560, 160)
+      context.strokeRect(60, 60, 520, 120)
+
+      gradient = context.createLinearGradient(0, 80, 640, 80)
+      gradient.addColorStop(0, 'white')
+      gradient.addColorStop(1, 'black')
+      context.fillStyle = gradient
+      context.fillRect(80, 80, 480, 80)
+
+      gradient2 = context.createRadialGradient(320, 120, 0, 320, 120, 320)
+      gradient2.addColorStop(0.00, 'red')
+      gradient2.addColorStop(0.14, 'orange')
+      gradient2.addColorStop(0.28, 'yellow')
+      gradient2.addColorStop(0.42, 'green')
+      gradient2.addColorStop(0.56, 'blue')
+      gradient2.addColorStop(0.70, 'indigo')
+      gradient2.addColorStop(0.84, 'violet')
+      context.fillStyle = gradient2
+      context.fillRect(20, 20, 600, 200)
+    </script>
+  </body>
+</html>
