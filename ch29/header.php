@@ -3,13 +3,15 @@ session_start();
 
 echo <<<_INIT
     <!DOCTYPE html>
-    <html lang="en">
+    <html>
     <head>
     <meta charset="UTF-8">
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<link rel="stylesheet" href="styles.css">
+<script src="javascript.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 _INIT;
 
 require_once 'functions.php';
@@ -33,12 +35,11 @@ echo <<<_MAIN
     <div data-role="header">
     <div id="logo" class="center">R
     <img id="robin" src="robin.gif" alt="">
-    </div>
-    <div class="username">$username</div>
-    </div>
+    bin's Nest</div>
+    <div class="username">$userstr</div>
     </div>
     <div data-role='content'>
-_MAIN;
+    _MAIN;
 
 if ($loggedin)
 {
@@ -57,20 +58,20 @@ if ($loggedin)
         <a data-role="button" data-inline="true" data-icon="action"
         data-transition='slide' href='logout.php?r=$randstr'>Log out</a>
         </div>
-_LOGGEDIN;
+        _LOGGEDIN;
 }
 else
 {
     echo <<<_GUEST
-      <div class="center">
+        <div class="center">
         <a data-role="button" data-inline="true" data-icon="home"
-          data-transition='slide' href='members.php?r=$randstr'>Home</a>
+        data-transition='slide' href='index.php?r=$randstr''>Home</a>
         <a data-role="button" data-inline="true" data-icon="plus"
-          data-transition='slide' href='members.php?r=$randstr'>Sign Up</a>
+        data-transition='slide' href='signup.php?r=$randstr''>Sign Up</a>
         <a data-role="button" data-inline="true" data-icon="check"
-          data-transition='slide' href='members.php?r=$randstr'>Log In</a>
-      </div>
-<p class='info'>(You must be logged in to use this app)</p>
+        data-transition='slide' href='login.php?r=$randstr''>Log In</a>
+        </div>
+        <p class='info'>(You must be logged in to use this app)</p>
 
-_GUEST;
+        _GUEST;
 }
