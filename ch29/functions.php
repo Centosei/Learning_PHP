@@ -49,8 +49,8 @@ function sanitizeString($var)
     $var = strip_tags($var);
     $var = htmlentities($var);
 
-    if (get_magic_quotes_gpc())
-        $var = stripslashes($var);
+    /* if (get_magic_quotes_gpc()) */
+    /*     $var = stripslashes($var); */
     $result = $pdo->quote($var);
     return str_replace("'", "", $result);
 }

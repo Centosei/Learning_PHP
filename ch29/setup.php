@@ -12,7 +12,7 @@ require_once 'functions.php';
 createTable('members',
     'user VARCHAR(16),
     pass VARCHAR(16),
-    INDEX(user(6)');
+    INDEX(user(6))');
 
 createTable('messages',
     'id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,

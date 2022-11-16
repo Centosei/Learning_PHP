@@ -46,7 +46,7 @@ if ($loggedin)
     echo <<<_LOGGEDIN
         <div class="center">
         <a data-role="button" data-inline="true" data-icon="home"
-        data-transition='slide' href='members.php?view=$user&r=$randstr'>Home</a>
+        data-transition='slide' href='index.php?view=$user&r=$randstr'>Home</a>
         <a data-role="button" data-inline="true" data-icon="user"
         data-transition='slide' href='members.php?r=$randstr'>Members</a>
         <a data-role="button" data-inline="true" data-icon="heart"
